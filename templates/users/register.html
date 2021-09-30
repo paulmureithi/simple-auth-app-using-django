@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div id="login-box">
+  <form method='POST' action='{% url 'register' %}' class="left">
+  {% csrf_token %}
+    <h1>Sign Up Here</h1>
+        
+    <label>{{form.username.label}}</label>
+    {{form.username}}
+
+    <label>{{form.password1.label}}</label>
+    {{form.password1}}
+
+    <label>{{form.password2.label}}</label>
+    {{form.password2}}
+   
+    <input type="submit" name="signup_submit" value="Sign Me Up" />
+      
+   
+    <!-- Display error messages -->
+    {% for error in field.errors %}
+      <small style="color: brown;">{{ error }}</small>
+    {% endfor %}
+    
+  </form>
+  
+  <div class="right">
+    <span class="loginwith">Log in with<br />Social Network</span>
+    
+    <button class="social-signin facebook">Log in with Facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+    <br><br>
+    <p align='center'>Have an account? <a href="{% url 'log_in' %}">Login</a></p>
+  </div>
+  <div class="or">OR</div>
+</div>
+
+{% endblock content %}
