@@ -9,14 +9,13 @@ Will later add an profile page that alows users to edit their personal details a
 The first thing to do is to clone the repository:
 
 ```sh
+$ mkdir auth_project && cd auth_project
 $ git clone https://github.com/paulmureithi/user-authentication-using-Django.git
-$ cd sample-django-app
 ```
 
-Create a virtual environment to install the packages in and activate it:
+Create folder for the project and a virtual environment to install the packages in and activate it:
 
 ```sh
-$ mkdir auth_project && cd auth_project
 $ python3 -m venv venv
 $ source env/bin/activate
 ```
